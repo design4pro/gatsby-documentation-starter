@@ -1,14 +1,20 @@
 {
-    "name": "@design4pro/gatsby-starter-documentation",
+    "name": "gatsby-starter-documentation",
     "description": "A starter for a documentation powered by Gatsby and Markdown",
-    "version": "0.0.0",
-    "author": "Rafał Wolak <r.wolak@design4.pro>",
-    "bugs": {
-        "url": "https://github.com/design4pro/gatsby-starter-documentation/issues"
+    "version": "0.0.1",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+        "start": "npm run develop",
+        "serve": "gatsby serve",
+        "clean": "gatsby clean",
+        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
     },
     "dependencies": {
-        "@design4pro/gatsby-theme-documentation": "^0.0.0",
-        "gatsby": "^2.18.12",
+        "gatsby": "^2.18.18",
+        "gatsby-theme-documentation-material-ui": "^0.0.1",
+        "prop-types": "^15.7.2",
         "react": "^16.12.0",
         "react-dom": "^16.12.0"
     },
@@ -16,8 +22,6 @@
         "@commitlint/cli": "^8.2.0",
         "@commitlint/config-conventional": "^8.2.0",
         "@commitlint/prompt-cli": "^8.2.0",
-        "@semantic-release/changelog": "^3.0.4",
-        "@semantic-release/git": "^7.0.16",
         "husky": "^3.0.5",
         "lint-staged": "^9.2.5",
         "prettier": "^1.19.1"
@@ -28,19 +32,13 @@
     ],
     "license": "MIT",
     "main": "n/a",
+    "author": "Rafał Wolak <r.wolak@design4.pro>",
+    "bugs": {
+        "url": "https://github.com/design4pro/gatsby-starter-documentation/issues"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/design4pro/gatsby-starter-documentation.git"
-    },
-    "scripts": {
-        "build": "gatsby build",
-        "develop": "gatsby develop",
-        "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-        "start": "npm run develop",
-        "serve": "gatsby serve",
-        "clean": "gatsby clean",
-        "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-        "release": "npx semantic-release"
     },
     "husky": {
         "hooks": {
@@ -52,5 +50,8 @@
             "npm run --silent lint:fix",
             "git add"
         ]
+    },
+    "optionalDependencies": {
+        "gatsby-source-filesystem": "^2.1.43"
     }
 }
